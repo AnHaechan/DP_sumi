@@ -14,12 +14,24 @@
 const auth = firebase.auth();
 const db = firebase.firestore();
 
+
+function myClickButton(){
+  const email = document.getElementById("SignInEmail").value;
+  const password = document.getElementById("SignInPassword").value;
+  if(event.keyCode==13 && email!=""&& password!="") {mySignIn(); return false;}
+  else if(event.keyCode==13){
+    alert("Fill in all items!");
+  }
+}
+
+
 function mySignIn(){
     const email = document.getElementById("SignInEmail").value;
     const password = document.getElementById("SignInPassword").value;
     
-    auth.signInWithEmailAndPassword(email, password).then(abc =>{
-      console.log(abc.user)
+    auth.signInWithEmailAndPassword(email, password).then(()=>{
       location.href="MainPage-Logged.html";
+    }).catch(function(error){
+      alert(error.message);
     })
 }
