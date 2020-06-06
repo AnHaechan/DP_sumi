@@ -31,6 +31,12 @@ function mySignIn(){
     
     auth.signInWithEmailAndPassword(email, password).then(()=>{
       location.href="MainPage-Logged.html";
+      if(document.getElementById("remember-me-checkbox").checked){
+        firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+      }
+      else{
+        firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
+      }
     }).catch(function(error){
       alert(error.message);
     })
