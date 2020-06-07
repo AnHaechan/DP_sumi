@@ -36,18 +36,17 @@
         >
       </h1>
       <p class="navbar-text pull-right" style="padding-top: 2rem;">
-        <button type="button" class="btn" id="heart">♡</button>
+        <button
+          type="button"
+          class="btn btn-outline-primary"
+          id="heart"
+          data-toggle="popover"
+          data-content="Added it to the interested-list!"
+          data-placement="bottom"
+        >
+          ♡
+        </button>
       </p>
-      <!--
-      <p class="navbar-text pull-right" style="padding-top: 2rem;">
-        <a href="#" class="btn btn-info btn-lg">
-          <span class="glyphicon glyphicon-heart"></span> ♡
-        </a>
-      </p>    
-      <label class="navbar-text pull-right" style="padding-top: 2rem;">
-        <input type="checkbox" value="remember-me" /> Interested
-      </label>
-      -->
     </nav>
 
     <div class="centerofpage">
@@ -70,32 +69,44 @@
             <a class="nav-link" data-toggle="tab" href="#asd">SIMILAR TASTE</a>
           </li>
         </ul>
-        <!--재료 선택 시 설명창 나오는 것 추가해야-->
         <div class="tab-content">
           <div class="tab-pane fade show active" id="qwe">
             <br />
             <p style="color: rgb(255, 187, 0);">ABV ~20%</p>
-            <table
-              class="mytable"
-              style="margin-left: auto; margin-right: auto;"
+            <strong>Ingredient</strong><br />
+            <span
+              class="badge badge-pill badge-primary"
+              data-html="true"
+              data-toggle="tooltip"
+              data-placement="top"
+              title="<img alt='Image html'
+                  width='150px'
+                  height='150px'
+                  src='./Images/gin2.jpg' />"
+              >Gin(1)</span
             >
-              <thead>
-                <tr>
-                  <th>Ingredient</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Gin(1)</td>
-                </tr>
-                <tr>
-                  <td>Orange Juice(1)</td>
-                </tr>
-                <tr>
-                  <td>Sugar(1-2 Tea spoon)</td>
-                </tr>
-              </tbody>
-            </table>
+            <span
+              class="badge badge-pill badge-primary"
+              data-html="true"
+              data-toggle="tooltip"
+              data-placement="top"
+              title="<img alt='Image html'
+                width='150px'
+                height='150px'
+                src='./Images/orange_juice.jpg' />"
+              >Orange Juice(1)</span
+            >
+            <span
+              class="badge badge-pill badge-primary"
+              data-html="true"
+              data-toggle="tooltip"
+              data-placement="top"
+              title="<img alt='Image html'
+                width='150px'
+                height='150px'
+                src='./Images/sugar2.jpg' />"
+              >Sugar(1-2 Tea spoon)</span
+            >
           </div>
           <div class="tab-pane fade" id="asd">
             <div style="padding-top: 10px;">
@@ -111,26 +122,35 @@
         </div>
       </div>
 
-      <p style="color: rgb(145, 145, 145);">
+      <p style="color: rgb(120, 120, 120);">
         How was the taste? Remember it! <br />
+      </p>
+      <p style="color: rgb(145, 145, 145); font-size: small;">
         <button
           type="button"
-          class="btn btn-link"
-          data-toggle="popover"
-          data-content="Based on your liked data, You'll be recommended cocktails."
-          data-placement="top"
+          class="btn btn-outline-primary"
+          style="width: 100px;"
         >
-          Liked
+          <img
+            alt="Image html"
+            width="30px"
+            height="30px"
+            src="./Images/positive-vote.png"
+          />
         </button>
         <button
           type="button"
-          class="btn btn-link"
-          data-toggle="popover"
-          data-content="Based on your disliked data, You'll be recommended cocktails."
-          data-placement="top"
+          class="btn btn-outline-primary"
+          style="width: 100px;"
         >
-          Disliked
+          <img
+            alt="Image html"
+            width="30px"
+            height="30px"
+            src="./Images/negative-vote.png"
+          />
         </button>
+        <br />Based on your data, You'll be recommended cocktails.
       </p>
     </div>
     <script
@@ -153,6 +173,7 @@
         $('[data-toggle="popover"]').popover({
           trigger: "focus",
         });
+        $('[data-toggle="tooltip"]').tooltip();
       });
     </script>
   </body>
