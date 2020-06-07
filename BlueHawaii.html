@@ -29,9 +29,19 @@
           />
         </svg>
       </a>
-      <h1 class="navbar-text center" style="padding-top: 2rem;">
-        Blue Hawaii
-      </h1>
+
+      <!--통합한 후에 like/dislike 결과 바탕으로 id="recommend 추천률 계산해서 바꿔야 함-->
+      <div class="navbar-text center" style="padding-top: 2rem;">
+        <h1>
+          Blue Hawaii
+          <span
+            class="badge badge-primary"
+            id="recomend"
+            style="font-size: 10px;"
+            >70%</span
+          >
+        </h1>
+      </div>
       <p class="navbar-text pull-right" style="padding-top: 2rem;">
         <button type="button" class="btn" id="heart">♡</button>
       </p>
@@ -72,7 +82,7 @@
               >
             </li>
           </ul>
-          <!--겹침 해결해야/재료 선택 시 설명창 나오는 것 추가해야-->
+          <!--재료 선택 시 설명창 나오는 것 추가해야-->
           <div class="tab-content">
             <div class="tab-pane fade show active" id="qwe">
               <br />
@@ -103,15 +113,11 @@
               </table>
             </div>
             <div class="tab-pane fade" id="asd">
-              <p>
-                <br />
-                <strong>powerade</strong>
-              </p>
               <div style="padding-top: 10px;">
                 <img
                   alt="Image html"
-                  width="90%"
-                  height="90%"
+                  width="50%"
+                  height="50%"
                   style="max-height: 500px; max-width: 500px;"
                   src="./Images/powerade.jpg"
                 />
