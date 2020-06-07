@@ -8,23 +8,23 @@
     <link href="SignIn.css" rel="stylesheet">
 </head>
 <body>
-    //Button to MainPage
+    <!-- Button to MainPage -->
     <a href="MainPage.html">
         <svg class="mybackbutton bi bi-chevron-left" width="4em" height="4em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
         </svg>
     </a>
 
-    //Things all to center
+    <!-- Things all to center -->
     <div class="centerofpage">
         <h1 class="mypadding">Welcome!</h1>
         <div class="mypadding">
 
-            //Input fidld for Email, Password 
+            <!-- Input fidld for Email, Password  -->
             <input class="myinput" type="email" id="SignInEmail" placeholder="Email address" onkeypress="myClickButton()" required autofocus>
             <input class="myinput" type="password" id="SignInPassword" placeholder="Password" onkeypress="myClickButton()" required>
 
-            //Remember-me checkbox
+            <!-- Remember-me checkbox -->
             <div class="checkbox">
                 <label>
                 <input id="remember-me-checkbox" type="checkbox" value="remember-me"> Remember me
@@ -33,10 +33,10 @@
 
         </div>
         
-        //SignIn button with firebase
+        <!-- SignIn button with firebase -->
         <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="mySignIn()">Sign in</button>
 
-        //Button to SignUp page
+        <!-- Button to SignUp page -->
         <p>Don't have an account? <button type="button" class="btn btn-link" onclick = "location.href = 'SignUp.html' ">Sign Up</button> </p>
     </div>
 
