@@ -13,6 +13,7 @@
 
 
     <body>
+        //Button that leads to Sign In
         <div class="signInButton">
             <a class="btn btn-outline-primary" href="SignIn.html">Sign In</a>
         </div>
@@ -21,6 +22,8 @@
             <div class="myPadding"></div>
             <h2 class="titlefont">My Own Bartender</h2>
             <div class="myPadding"></div>
+
+            //Search bar with button
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="Search" name="search" list="cocktail-list" id="searchInput" onkeypress="if(event.keyCode==13) {mySearch(); return false;}" autofocus>
                 <div class="searchMargin">
@@ -34,6 +37,7 @@
             </div>
         </div>
 
+        //Similar to autocomplete
         <datalist id="cocktail-list">
             <option>Blue Hawaii</option>
             <option>Blue Monday</option>

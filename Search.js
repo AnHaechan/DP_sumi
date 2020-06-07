@@ -1,3 +1,4 @@
+//function for the search bar and button
 function mySearch(){
     var input = document.getElementById("searchInput").value;
     if (0==input.localeCompare("Blue Hawaii")){

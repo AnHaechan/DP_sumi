@@ -14,11 +14,14 @@
 const auth = firebase.auth();
 const db = firebase.firestore();
 
+// Read each users' data from database
 function myReadFunction(){
   firebase.database().ref('users/'+firebase.auth().currentUser.uid+'/like').once('value').then(function(snapshot){
     alert(snapshot.val());
   });
 }
+
+// Update each users' data from database
 function myUpdateFunction(){
   const id = firebase.auth().currentUser.uid;
   firebase.database().ref('users/'+id).set({
@@ -28,6 +31,7 @@ function myUpdateFunction(){
   })
 }
 
+//SignOut user with firebase
 function mySignOut(){
     auth.signOut().then(()=>{
         location.href="MainPage.html";

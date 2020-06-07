@@ -15,17 +15,19 @@ const auth = firebase.auth();
 const db = firebase.firestore();
 
 
-function myClickButton(){
-  const email = document.getElementById("SignInEmail").value;
-  const password = document.getElementById("SignInPassword").value;
-  if(event.keyCode==13 && email!=""&& password!="") {mySignIn(); return false;}
-  else if(event.keyCode==13){
-    alert("Fill in all items!");
+  //function for enter press in input
+  function myClickButton(){
+    const email = document.getElementById("SignInEmail").value;
+    const password = document.getElementById("SignInPassword").value;
+    if(event.keyCode==13 && email!=""&& password!="") {mySignIn(); return false;}
+    else if(event.keyCode==13){
+      alert("Fill in all items!");
+    }
   }
-}
 
 
-function mySignIn(){
+  //SignIn with firebase
+  function mySignIn(){
     const email = document.getElementById("SignInEmail").value;
     const password = document.getElementById("SignInPassword").value;
     
@@ -40,4 +42,4 @@ function mySignIn(){
     }).catch(function(error){
       alert(error.message);
     })
-}
+  }

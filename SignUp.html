@@ -10,14 +10,19 @@
     <link href="SignUp.css" rel="stylesheet">
 </head>
 <body>
+    //Button to MainPage
     <a href="MainPage.html">
         <svg class="mybackbutton bi bi-chevron-left" width="4em" height="4em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
         </svg>
     </a>
+
+    //Things all to center
     <div class="centerofpage">
         <h1 class="mypadding">Welcome!</h1>
         <div class="mypadding">
+
+            //Input fidld for Name, Email, Password, Confirm 
             <input class="myinput" type="name" id="SignUpName" placeholder="You name" onkeypress="myClickButton()" required autofocus>
             <input class="myinput" type="email" id="SignUpEmail" placeholder="Email address" onkeypress="myClickButton()" required>
             <input class="myinput" type="password" id="SignUpPassword" placeholder="Password" onkeypress="myClickButton()" required>
@@ -25,7 +30,10 @@
         </div>
         <p></p>
 
+        //SignUp button with firebase
         <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="mySignUp()">Sign Up</button>
+        
+        //Button to SignIn page
         <p>Already have an account? <button type="button" class="btn btn-link" onclick = "location.href = 'SignIn.html' ">Sign In</button> </p>
     </div>
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase.js"></script>

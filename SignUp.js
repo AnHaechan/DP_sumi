@@ -11,37 +11,38 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
-function myClickButton(){
-  const name = document.getElementById("SignUpName").value;
-  const email = document.getElementById("SignUpEmail").value;
-  const password = document.getElementById("SignUpPassword").value;
-  const confirm = document.getElementById("SignUpConfirm").value;
-  if(event.keyCode==13 && name!=""&& email!=""&& password!=""&& confirm!="") {mySignUp(); return false;}
-  else if(event.keyCode==13 ){
-    alert("Fill in all items!");
+  //function for enter press in input
+  function myClickButton(){
+    const name = document.getElementById("SignUpName").value;
+    const email = document.getElementById("SignUpEmail").value;
+    const password = document.getElementById("SignUpPassword").value;
+    const confirm = document.getElementById("SignUpConfirm").value;
+    if(event.keyCode==13 && name!=""&& email!=""&& password!=""&& confirm!="") {mySignUp(); return false;}
+    else if(event.keyCode==13 ){
+      alert("Fill in all items!");
+    }
   }
-}
 
-function mySignUp(){
+  //SignUp with firebase
+  function mySignUp(){
     const name = document.getElementById("SignUpName").value;
     const email = document.getElementById("SignUpEmail").value;
     const password = document.getElementById("SignUpPassword").value;
     const confirm = document.getElementById("SignUpConfirm").value;
 
     if(0!=password.localeCompare(confirm)){
-        alert("Password is not same!");
-        document.getElementById("SignUpPassword").value="";
-        document.getElementById("SignUpConfirm").value="";
+      alert("Password is not same!");
+      document.getElementById("SignUpPassword").value="";
+      document.getElementById("SignUpConfirm").value="";
     }else{
-        firebase.auth().createUserWithEmailAndPassword(email, password).then(function(user){
-            user.updateProfile({
-              displayName: name
-            })
-            location.href="MainPage-Logged.html";
-        }).catch(function(error){
-          let message = error.message;
-          alert(message);
-        })
+      firebase.auth().createUserWithEmailAndPassword(email, password).then(function(user){
+          user.updateProfile({
+            displayName: name
+          })
+          location.href="MainPage-Logged.html";
+      }).catch(function(error){
+        let message = error.message;
+        alert(message);
+      })
     }
-
-}
+  } 
