@@ -12,13 +12,13 @@
     />
     <link href="BlueHawaii.css" rel="stylesheet" />
   </head>
-  <body>
+  <body class="pt-5">
     <nav class="navbar fixed-top navbar-light bg-light">
       <a href="#" onclick="goBack()">
         <svg
           class="mybackbutton bi bi-chevron-left"
           width="4em"
-          height="4em"
+          height="2.5em"
           viewBox="0 0 16 16"
           fill="currentColor"
           xmlns="http://www.w3.org/2000/svg"
@@ -29,10 +29,15 @@
           />
         </svg>
       </a>
-      <h1 class="navbar-text center" style="padding-top: 2rem;">
+
+      <!--통합한 후에 like/dislike 결과 바탕으로 id="recommend 추천률 계산해서 바꿔야 함-->
+      <div
+        class="navbar-text center"
+        style="font-size: 2rem; font-weight: 500;"
+      >
         Mimosa
-      </h1>
-      <p class="navbar-text pull-right" style="padding-top: 2rem;">
+      </div>
+      <div class="navbar-text pull-right">
         <button
           type="button"
           class="btn btn-outline-primary"
@@ -43,7 +48,7 @@
         >
           ♡
         </button>
-      </p>
+      </div>
     </nav>
 
     <div class="centerofpage">
