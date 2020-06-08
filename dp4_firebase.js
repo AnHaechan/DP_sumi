@@ -4,7 +4,10 @@
 // 없애는 opreation : 'deleteFromDatabase_like|dislike|interest (cocktail_data)'
 
 
-
+//뒤로가기 - 임시
+function goBack(){
+  window.history.back();
+}
 
 
 

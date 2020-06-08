@@ -28,6 +28,8 @@ const db = firebase.firestore();
 
   //SignIn with firebase
   function mySignIn(){
+    location.href="MainPage-Logged.html";
+    /*
     const email = document.getElementById("SignInEmail").value;
     const password = document.getElementById("SignInPassword").value;
     
@@ -42,4 +44,5 @@ const db = firebase.firestore();
     }).catch(function(error){
       alert(error.message);
     })
+    */
   }
