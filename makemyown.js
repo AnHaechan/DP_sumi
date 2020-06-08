@@ -15,7 +15,7 @@ function getIngres(cocktailList){
       ingre= cocktail_ingre[i];
       if(!ingres.includes(ingre)){
         ingres.push(ingre);
-      }
+      } 
     }
   }
   return ingres;
@@ -26,6 +26,10 @@ $(document).ready(function() {
   likeIngres = getIngres(likeCocktails);
   dislikeIngres = getIngres(dislikeCocktails);
   allIngres = getIngres([s1,s2,s3,s4,s5,s6]);
+  $('[data-toggle="tooltip"]').tooltip();
+  $('[data-toggle="popover"]').popover({
+    trigger: 'hover focus'
+  });
 });
 
 
