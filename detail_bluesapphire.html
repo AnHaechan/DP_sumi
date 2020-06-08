@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>OrangeBlossom</title>
+    <title>BlueSapphire</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -30,7 +30,7 @@
         </svg>
       </a>
       <h1 class="navbar-text center" style="padding-top: 2rem;">
-        Orange Blossom
+        Blue Sapphire
         <span class="badge badge-primary" id="recomend" style="font-size: 10px;"
           >70%</span
         >
@@ -53,12 +53,12 @@
       <img
         class="myImage"
         alt="Image html"
-        width="50%"
-        height="50%"
-        src="./Images/orange_blossom.png"
+        width="90%"
+        height="90%"
+        src="./Images/blue_sapphire.jpg"
       />
       <p class="myText">
-        Sweet&Sour orange juice followed by scent of pine leaf
+        Sweet soft drink with coconut&lime
       </p>
       <div class="mypadding">
         <ul class="nav nav-tabs">
@@ -72,52 +72,72 @@
         <div class="tab-content">
           <div class="tab-pane fade show active" id="qwe">
             <br />
-            <p style="color: rgb(255, 187, 0);">ABV ~20%</p>
-            <strong>Ingredient</strong><br />
-            <span
-              class="badge badge-pill badge-primary"
-              data-html="true"
-              data-toggle="tooltip"
-              data-placement="top"
-              title="<img alt='Image html'
-                  width='150px'
-                  height='150px'
-                  src='./Images/gin2.jpg' />"
-              >Gin(1)</span
-            >
-            <span
-              class="badge badge-pill badge-primary"
-              data-html="true"
-              data-toggle="tooltip"
-              data-placement="top"
-              title="<img alt='Image html'
+            <p style="color: rgb(0, 255, 128);">ABV ~12%</p>
+            <p style="margin-left: auto; margin-right: auto;">
+              <strong>Ingredient</strong><br />
+              <span
+                class="badge badge-pill badge-primary"
+                data-html="true"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="<img alt='Image html'
                 width='150px'
                 height='150px'
-                src='./Images/orange_juice.jpg' />"
-              >Orange Juice(1)</span
-            >
-            <span
-              class="badge badge-pill badge-primary"
-              data-html="true"
-              data-toggle="tooltip"
-              data-placement="top"
-              title="<img alt='Image html'
-                width='150px'
-                height='150px'
-                src='./Images/sugar2.jpg' />"
-              >Sugar(1-2 Tea spoon)</span
-            >
+                src='./Images/maliburum2.jpg' />"
+                >Maliburum(1)</span
+              >
+              <span
+                class="badge badge-pill badge-primary"
+                data-html="true"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="<img alt='Image html'
+              width='150px'
+              height='150px'
+              src='./Images/blue_curacao2.jpg' />"
+                >Blue Curacao(1)</span
+              >
+              <span
+                class="badge badge-pill badge-primary"
+                data-html="true"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="<img alt='Image html'
+              width='150px'
+              height='150px'
+              src='./Images/peach_brandy2.webp' />"
+                >Peach Schnapps/Peach Brandy(1)</span
+              >
+              <span
+                class="badge badge-pill badge-primary"
+                data-html="true"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="<img alt='Image html'
+              width='150px'
+              height='150px'
+              src='./Images/sweet&sour_mix2.jpeg' />"
+                >Sweet&Sour mix(2)</span
+              >
+              <span
+                class="badge badge-pill badge-primary"
+                data-html="true"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="<img alt='Image html'
+              width='150px'
+              height='150px'
+              src='./Images/sprite2.jpg' />"
+                >Sprite</span
+              >
+            </p>
           </div>
           <div class="tab-pane fade" id="asd">
-            <div style="padding-top: 10px;">
-              <img
-                alt="Image html"
-                width="50%"
-                height="50%"
-                style="max-height: 500px; max-width: 500px;"
-                src="./Images/orange_juice.jpg"
-              />
-            </div>
+            <p>
+              <br />
+              <br />
+              updated soon <br />
+            </p>
           </div>
         </div>
       </div>
@@ -127,6 +147,7 @@
       </p>
       <p style="color: rgb(145, 145, 145); font-size: small;">
         <button
+        onclick = "writeToDatabase_like(s3); deleteFromDatabase_dislike(s3)"
           type="button"
           class="btn btn-outline-primary"
           style="width: 100px;"
@@ -139,6 +160,7 @@
           />
         </button>
         <button
+        onclick = "writeToDatabase_dislike(s3); deleteFromDatabase_like(s3)"
           type="button"
           class="btn btn-outline-primary"
           style="width: 100px;"
@@ -176,5 +198,18 @@
         $('[data-toggle="tooltip"]').tooltip();
       });
     </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.6/firebase.js"></script>
+        <script src="./dp4_firebase.js"></script>
+        <script>
+          // !! firebase.js와 haechan.js -> acutal function call (X)
+          // .html간의 sharing : only via firebase!!
+          $(document).ready(function() { 
+          readFromDatabase_interest(false);
+          readFromDatabase_like(false);
+          readFromDatabase_dislike(false);
+          
+    
+          });
+        </script>
   </body>
 </html>

@@ -1,0 +1,29 @@
+.item{
+    background-color: white; /*hsl(45, 81%, 92%);*/
+    border-radius: 15px;
+    margin-bottom:20px;
+  }
+
+body{
+  background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url("./Images/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height:100%;
+
+}
+
+.intersted_img{
+  width:1px;
+  height:3px;
+}
+
+/*
+.list_items{
+  background-color:hsl(45, 81%, 92%);
+}
+*/
+
+.central{
+  text-align: center;
+}

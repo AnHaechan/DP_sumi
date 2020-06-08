@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ScrewDriver</title>
+    <title>Mimosa</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -30,7 +30,7 @@
         </svg>
       </a>
       <h1 class="navbar-text center" style="padding-top: 2rem;">
-        Screw Driver
+        Mimosa
         <span class="badge badge-primary" id="recomend" style="font-size: 10px;"
           >70%</span
         >
@@ -53,12 +53,12 @@
       <img
         class="myImage"
         alt="Image html"
-        width="60%"
-        height="60%"
-        src="./Images/screw_driver.jpg"
+        width="90%"
+        height="90%"
+        src="./Images/mimosa.jpg"
       />
       <p class="myText">
-        More like orange juice than alcohol
+        Sweet&Sour orange juice followed by scent of pine leaf
       </p>
       <div class="mypadding">
         <ul class="nav nav-tabs">
@@ -72,43 +72,39 @@
         <div class="tab-content">
           <div class="tab-pane fade show active" id="qwe">
             <br />
-            <p style="color: rgb(0, 255, 128);">ABV ~13%</p>
-            <p style="color: rgb(255, 187, 0);">ABV ~25%</p>
-            <p style="font-size: 10px;">(40% Vodka / 70% Vodka)</p>
-            <strong>Ingredient</strong><br />
-            <span
-              class="badge badge-pill badge-primary"
-              data-html="true"
-              data-toggle="tooltip"
-              data-placement="top"
-              title="<img alt='Image html'
+            <p style="color: rgb(0, 255, 128);">ABV ~6%</p>
+            <p style="margin-left: auto; margin-right: auto;">
+              <strong>Ingredient</strong><br />
+              <span
+                class="badge badge-pill badge-primary"
+                data-html="true"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="<img alt='Image html'
                 width='150px'
                 height='150px'
-                src='./Images/vodka2.jpg' />"
-              >Vodka(1)</span
-            >
-            <span
-              class="badge badge-pill badge-primary"
-              data-html="true"
-              data-toggle="tooltip"
-              data-placement="top"
-              title="<img alt='Image html'
-                width='150px'
-                height='150px'
-                src='./Images/orange_juice.jpg' />"
-              >Orange Juice(2)</span
-            >
+                src='./Images/sparkling_wine2.jpg' />"
+                >Sparkling Wine(1)</span
+              >
+              <span
+                class="badge badge-pill badge-primary"
+                data-html="true"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="<img alt='Image html'
+              width='150px'
+              height='150px'
+              src='./Images/orange_juice.jpg' />"
+                >Orange Juice(2)</span
+              >
+            </p>
           </div>
           <div class="tab-pane fade" id="asd">
-            <div style="padding-top: 10px;">
-              <img
-                alt="Image html"
-                width="50%"
-                height="50%"
-                style="max-height: 500px; max-width: 500px;"
-                src="./Images/orange_juice.jpg"
-              />
-            </div>
+            <p>
+              <br />
+              <br />
+              updated soon<br />
+            </p>
           </div>
         </div>
       </div>
@@ -118,6 +114,7 @@
       </p>
       <p style="color: rgb(145, 145, 145); font-size: small;">
         <button
+        onclick = "writeToDatabase_like(s6); deleteFromDatabase_dislike(s6)"
           type="button"
           class="btn btn-outline-primary"
           style="width: 100px;"
@@ -130,6 +127,7 @@
           />
         </button>
         <button
+        onclick = "writeToDatabase_dislike(s6); deleteFromDatabase_like(s6)"
           type="button"
           class="btn btn-outline-primary"
           style="width: 100px;"
@@ -167,5 +165,20 @@
         $('[data-toggle="tooltip"]').tooltip();
       });
     </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.6/firebase.js"></script>
+<script src="./dp4_firebase.js"></script>
+<script>
+  // !! firebase.js와 haechan.js -> acutal function call (X)
+  // .html간의 sharing : only via firebase!!
+  $(document).ready(function() { 
+  readFromDatabase_interest(false);
+  readFromDatabase_like(false);
+  readFromDatabase_dislike(false);
+  
+
+  });
+</script>
+
   </body>
 </html>
