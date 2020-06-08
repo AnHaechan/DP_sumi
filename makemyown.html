@@ -33,7 +33,7 @@
 
         <div class="row">
             <div class="col" style=" background-color: rgba(255, 255, 255, 0.5);">
-                <img src="Images/example.gif" style="max-width: 240px;">
+             <!--  <img src="Images/example.gif" style="max-width: 240px;">-->
             </div>
         </div>
 
@@ -164,7 +164,7 @@
 
         <div class="row" style="padding-top: 40px;">
             <div class="col">
-                <button type="button" class="btn btn-primary">
+                <button type="button" class="btn btn-primary" onclick="gotoCocktail(chosenIngres)"> 
                     Mix the ingredients you want
                 </button>
             </div>
@@ -176,5 +176,22 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.6/firebase.js"></script>
+    <script src="./dp4_firebase.js"></script>
+    <scirpt src="./makemyown.js"></scirpt>
+    
+    <script>
+      // !! firebase.js와 haechan.js -> acutal function call (X)
+      // .html간의 sharing : only via firebase!!
+      $(document).ready(function() { 
+      readFromDatabase_interest(false);
+      readFromDatabase_like(false);
+      readFromDatabase_dislike(false);
+      
+
+      });
+    </script>
+  
   </body>
 </html>
