@@ -14,7 +14,7 @@
   </head>
   <body class="pt-5">
     <nav class="navbar fixed-top navbar-light bg-light">
-      <a href="#" onclick='goBack()'>
+      <a href="#" onclick="goBack()">
         <svg
           class="mybackbutton bi bi-chevron-left"
           width="4em"
@@ -71,12 +71,20 @@
         <div class="mypadding">
           <ul class="nav nav-tabs">
             <li class="nav-item">
-              <a class="nav-link active" data-toggle="tab" href="#qwe"
+              <a
+                class="nav-link active"
+                data-toggle="tab"
+                href="#qwe"
+                style="font-size: small;"
                 >DETAIL</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#asd"
+              <a
+                class="nav-link"
+                data-toggle="tab"
+                href="#asd"
+                style="font-size: small;"
                 >SIMILAR TASTE</a
               >
             </li>
@@ -147,17 +155,14 @@
           </div>
         </div>
 
-
-
         <p style="color: rgb(120, 120, 120);">
-          <br>How was the taste? Good or Bad?
+          <br />How was the taste? Good or Bad?
         </p>
         <p style="color: rgb(145, 145, 145); font-size: small;">
           <button
-            onclick = "writeToDatabase_like(s1); deleteFromDatabase_dislike(s1)"
+            onclick="writeToDatabase_like(s1); deleteFromDatabase_dislike(s1)"
             type="button"
             class="btn btn-outline-primary"
-            style="width: 100px;"
           >
             <img
               alt="Image html"
@@ -167,10 +172,9 @@
             />
           </button>
           <button
-            onclick = "writeToDatabase_dislike(s1); deleteFromDatabase_like(s1)"
+            onclick="writeToDatabase_dislike(s1); deleteFromDatabase_like(s1)"
             type="button"
             class="btn btn-outline-primary"
-            style="width: 100px;"
           >
             <img
               alt="Image html"
@@ -179,14 +183,11 @@
               src="./Images/negative-vote.png"
             />
           </button>
-          <br /> You can check the list of liked / disliked cocktails later.
+          <br />
+          You can check the list of liked / disliked cocktails later.
         </p>
       </div>
     </div>
-
-
-   
-
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -212,18 +213,15 @@
       });
     </script>
 
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.6/firebase.js"></script>
     <script src="./dp4_firebase.js"></script>
     <script>
       // !! firebase.js와 haechan.js -> acutal function call (X)
       // .html간의 sharing : only via firebase!!
-      $(document).ready(function() { 
-      readFromDatabase_interest(false);
-      readFromDatabase_like(false);
-      readFromDatabase_dislike(false);
-      
-
+      $(document).ready(function () {
+        readFromDatabase_interest(false);
+        readFromDatabase_like(false);
+        readFromDatabase_dislike(false);
       });
     </script>
   </body>
