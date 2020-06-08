@@ -78,22 +78,26 @@ var interestCocktails=[];
     if (names.includes(name)) return;
    
     interestCocktails.push(cocktail);
-    firebase.database().ref('/interestBox/').set(interestCocktails);
+    firebase.database().ref('users/'+firebase.auth().currentUser.uid+'/interestBox/').set(interestCocktails);
   }
   
   function readFromDatabase_interest(isListPage) {
-    return firebase.database().ref('/interestBox/').on('value', function(snapshot) {
-      
-      var myValue = snapshot.val();
-     if (myValue==null) interestCocktails=[];
-     else interestCocktails= myValue;
-
-     if (isListPage==true) {
-        console.log('here'); 
-        interest_listener.click();
-    }
-
-  });
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        return firebase.database().ref('users/'+firebase.auth().currentUser.uid+'/interestBox/').on('value', function(snapshot) {
+          
+          var myValue = snapshot.val();
+         if (myValue==null) interestCocktails=[];
+         else interestCocktails= myValue;
+    
+         if (isListPage==true) {
+            console.log('here'); 
+            interest_listener.click();
+        }
+    
+      });
+      } 
+    });
   }
 
   function deleteFromDatabase_interest(cocktail){
@@ -105,7 +109,7 @@ var interestCocktails=[];
        }
        interestCocktails=tmp_interestCocktails;
 
-       firebase.database().ref('/interestBox/').set(interestCocktails);
+       firebase.database().ref('users/'+firebase.auth().currentUser.uid+'/interestBox/').set(interestCocktails);
     
   }
 
@@ -120,23 +124,27 @@ var interestCocktails=[];
     }
     if (names.includes(name)) return;
     likeCocktails.push(cocktail);
-    firebase.database().ref('/likeBox/').set(likeCocktails);
+    firebase.database().ref('users/'+firebase.auth().currentUser.uid+'/likeBox/').set(likeCocktails);
   }
 
   
   function readFromDatabase_like(isListPage) {
-    return firebase.database().ref('/likeBox/').on('value', function(snapshot) {
-      
-      var myValue = snapshot.val();
-     if (myValue==null) likeCocktails=[];
-     else likeCocktails= myValue;
-
-     if (isListPage==true){
-      console.log('like'); 
-       like_listener.click();
-     }
-
-  });
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        return firebase.database().ref('users/'+firebase.auth().currentUser.uid+'/likeBox/').on('value', function(snapshot) {
+          
+          var myValue = snapshot.val();
+         if (myValue==null) likeCocktails=[];
+         else likeCocktails= myValue;
+    
+         if (isListPage==true){
+          console.log('like'); 
+           like_listener.click();
+         }
+    
+      });
+      } 
+    });
   }
 
   function deleteFromDatabase_like(cocktail){
@@ -149,7 +157,7 @@ var interestCocktails=[];
        }
        likeCocktails=tmp_likeCocktails;
 
-       firebase.database().ref('/likeBox/').set(likeCocktails);
+       firebase.database().ref('users/'+firebase.auth().currentUser.uid+'/likeBox/').set(likeCocktails);
     
   }
 
@@ -164,23 +172,26 @@ function writeToDatabase_dislike(cocktail) {
   }
   if (names.includes(name)) return;
     dislikeCocktails.push(cocktail);
-    firebase.database().ref('/dislikeBox/').set(dislikeCocktails);
+    firebase.database().ref('users/'+firebase.auth().currentUser.uid+'/dislikeBox/').set(dislikeCocktails);
   }
 
 
   function readFromDatabase_dislike(isListPage) {
-    return firebase.database().ref('/dislikeBox/').on('value', function(snapshot) {
-      
-      var myValue = snapshot.val();
-     if (myValue==null) dislikeCocktails=[];
-     else dislikeCocktails= myValue;
-
-     if (isListPage==true){
-       dislike_listener.click();
-     }
-  });
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        return firebase.database().ref('users/'+firebase.auth().currentUser.uid+'/dislikeBox/').on('value', function(snapshot) {
+          
+          var myValue = snapshot.val();
+         if (myValue==null) dislikeCocktails=[];
+         else dislikeCocktails= myValue;
+    
+         if (isListPage==true){
+           dislike_listener.click();
+         }
+      });
+      } 
+    });
   }
-
   function deleteFromDatabase_dislike(cocktail){
        var tmp_dislikeCocktails=[]
        for (var i=0; i<dislikeCocktails.length; i++){
@@ -190,6 +201,6 @@ function writeToDatabase_dislike(cocktail) {
        }
        dislikeCocktails=tmp_dislikeCocktails;
 
-       firebase.database().ref('/dislikeBox/').set(dislikeCocktails);
+       firebase.database().ref('users/'+firebase.auth().currentUser.uid+'/dislikeBox/').set(dislikeCocktails);
     
   }
