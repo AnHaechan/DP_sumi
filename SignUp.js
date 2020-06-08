@@ -37,8 +37,8 @@
       document.getElementById("SignUpConfirm").value="";
     }else{
       firebase.auth().createUserWithEmailAndPassword(email, password).then(function(user){
-          const user = firebase.auth().currentUser;
-          user.updateProfile({
+          const user1 = firebase.auth().currentUser;
+          user1.updateProfile({
             displayName: name
           })
           location.href="MainPage-Logged.html";
