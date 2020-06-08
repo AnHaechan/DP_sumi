@@ -30,7 +30,7 @@ var s1 = {name: "blue hawaii", pic:"blue_hawaii.jpg", abs:"15%", taste: "Watch a
 
 var s2 = {name: "blue monday", pic:"blue_monday.jpg", abs:"25%", taste: "Dangerous sweetness", ingredients : ["Vodka","Triple Sec", "Blue Curacao"]};
 
-var s3 = {name: "blue sapphire", pic:"blue_sapphire.jpg", abs:"15%", taste: "Watch and see the hawaii", ingredients : ["Malibu Rum","Blue Curacao","Peach Brandy/Peach Schanpps", "Sweet&Sour Mix", "Sprite"] };
+var s3 = {name: "blue sapphire", pic:"blue_sapphire.jpg", abs:"15%", taste: "Watch and see the hawaii", ingredients : ["Malibu Rum","Blue Curacao","Peach Brandy/Peach Schnapps", "Sweet&Sour Mix", "Sprite"] };
 
 var s4 = {name: "screw driver", pic:"screw_driver.jpg", abs:"25%", taste: "Dangerous sweetness", ingredients : ["Vodka","Orange Juice"]};
 
