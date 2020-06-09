@@ -41,7 +41,7 @@ function checkElems() {
   if (deg_of_recommen == 1) {
     $("#recommend").append(
       [
-        '<span class="badge badge-warning center" style="font-size: x-small; align-self: center;">just try it</span>',
+        '<span class="badge badge-warning center" style="font-size: x-small; align-self: center;">neither recommended nor not recommended</span>',
       ].join("\n")
     );
   } else {
