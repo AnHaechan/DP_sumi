@@ -19,18 +19,29 @@ function getIngres(cocktailList) {
 }
 
 function checkElems() {
-  likeIngres = getIngres(likeCocktails);
-  dislikeIngres = getIngres(dislikeCocktails);
-  for (var i = 0; i < likeIngres.length; i++) {
-    if (likeIngres[i].includes(s4)) {
-      deg_of_recommen++;
-    }
+  document.getElementById("recommend").innerHTML="";
+  var deg_of_recommen = 1;
+  
+  var likenames=[];
+  var dislikenames=[];
+
+
+  for (var i=0; i<likeCocktails.length; i++){
+    likenames.push(likeCocktails[i]['name']);
   }
-  for (var j = 0; j < dislikeIngres.length; j++) {
-    if (dislikeIngres[j].includes(s4)) {
-      deg_of_recommen--;
-    }
+  for (var i=0; i<dislikeCocktails.length; i++){
+    
+    dislikenames.push(dislikeCocktails[i]['name']);
   }
+  console.log(dislikenames);
+
+  if (likenames.includes(s1['name']) || likenames.includes(s2['name']) || likenames.includes(s3['name'])){
+    deg_of_recommen +=1;
+  }
+  if (dislikenames.includes(s1['name']) || dislikenames.includes(s2['name']) || dislikenames.includes(s3['name']) ){
+    deg_of_recommen -=1;
+  }
+
   if (deg_of_recommen >= 2) {
     $("#recommend").append(
       [
@@ -38,7 +49,7 @@ function checkElems() {
       ].join("\n")
     );
   }
-  if (deg_of_recommen == 1) {
+  else if (deg_of_recommen == 1) {
     $("#recommend").append(
       [
         '<span class="badge badge-warning center" style="font-size: x-small; align-self: center;">neither recommended nor not recommended</span>',
@@ -53,8 +64,18 @@ function checkElems() {
   }
 }
 
-$(document).ready(function () {
-  allIngres = getIngres([s1, s2, s3, s4, s5, s6]);
+function resolveAfter2Seconds() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve('resolved');
+    }, 3000);
+  });
+}
 
+async function asyncCall() {
+  console.log('calling');
+  const result = await resolveAfter2Seconds();
+  console.log(result);
   checkElems();
-});
+  // expected output: 'resolved'
+}

@@ -39,6 +39,7 @@
       </div>
       <div class="navbar-text pull-right">
         <button
+        onclick="writeToDatabase_interest(s6)"
           type="button"
           class="btn btn-outline-primary"
           id="heart"
@@ -193,6 +194,7 @@
         readFromDatabase_interest(false);
         readFromDatabase_like(false);
         readFromDatabase_dislike(false);
+        asyncCall();
       });
     </script>
   </body>
