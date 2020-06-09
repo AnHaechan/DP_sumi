@@ -25,11 +25,12 @@
 
     <title>MakeMyOwn</title>
   </head>
-  <body>
+  <body style="font-family: Segoe UI;">
     <div class="container">
       <div class="row align-items-center">
         <div class="col" style="text-align: left;">
           <button
+            onclick="goBack()"
             type="button"
             class="btn btn-light"
             style="background-color: transparent; border-color: transparent;"
@@ -37,27 +38,34 @@
             <i class="fas fa-chevron-left fa-3x"></i>
           </button>
         </div>
-        <div class="col-xs-auto">
-          <h3>Make My Own</h3>
+        <div class="col-md-auto" style="text-align:center">
+          <h3>Make My Own Cocktail</h3> <br> 
+            Mix the ingredients in order to find likeable cocktail!
+    
         </div>
 
-        <div class="col" style="text-align: right;">
-          <button
+        <div class="col" style="text-align: center;">
+         
+          <!--<button
             type="button"
             class="btn btn-light"
             style="background-color: transparent; border-color: transparent;"
           >
             <i class="far fa-question-circle fa-3x"></i>
-          </button>
+          </button>-->
         </div>
       </div>
+
+     
 
       <div class="row">
         <div class="col" style="background-color: rgba(255, 255, 255, 0.5);">
           <img src="Images/cocktail_icon.png" style="max-width: 240px;" />
+    
         </div>
+          
       </div>
-
+   
       <div class="row">
         <div class="col" style="text-align: left;">
           <h4>Like</h4>
@@ -76,7 +84,7 @@
 
       <div class="row">
         <div class="col" style="text-align: left;">
-          <h4>Else</h4>
+          <h4>All</h4>
         </div>
       </div>
 

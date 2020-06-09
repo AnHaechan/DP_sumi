@@ -39,6 +39,7 @@
       </div>
       <div class="navbar-text pull-right">
         <button
+          onclick="writeToDatabase_interest(s1)"
           type="button"
           class="btn btn-outline-primary"
           id="heart"
@@ -218,6 +219,7 @@
       });
     </script>
 
+  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.6/firebase.js"></script>
     <script src="./dp4_firebase.js"></script>
     <script src="./detail_s1.js"></script>
@@ -231,6 +233,8 @@
         readFromDatabase_interest(false);
         readFromDatabase_like(false);
         readFromDatabase_dislike(false);
+        asyncCall();
+
       });
     </script>
   </body>

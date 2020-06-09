@@ -2,6 +2,10 @@ var likeIngres = [];
 var dislikeIngres = [];
 var allIngres = [];
 
+function goBack(){
+  window.history.back();
+}
+
 function getIngres(cocktailList) {
   var ingres = [];
   for (var i = 0; i < cocktailList.length; i++) {
