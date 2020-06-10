@@ -90,6 +90,7 @@ $(document).ready(function () {
 */
 
 // this section of code is from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
+// same for detail_s2, s3,s4,s5,s6.js file
 
 function resolveAfter2Seconds() {
   return new Promise(resolve => {
