@@ -89,6 +89,8 @@ $(document).ready(function () {
 });
 */
 
+// this section of code is from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
+
 function resolveAfter2Seconds() {
   return new Promise(resolve => {
     setTimeout(() => {
@@ -104,3 +106,5 @@ async function asyncCall() {
   checkElems();
   // expected output: 'resolved'
 }
+
+// this section of code is from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
