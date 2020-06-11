@@ -6,5 +6,5 @@ Recommendation feature implementation in task 2 is is in detail.js file. <br/>
 dp4_haechan_list_*.html and js provide 'list of cocktails' page.<br/>
 dp4_firebase.js is for DB management.<br/>
 
-Makemyown page show various ingredients in each col. <br/>It get list of ingredients from user database and append it. <br/>Currently, we still considering how to make the mixing algorithm.<br/>
+makemyown.html show various ingredients in each col. <br/>makemyown.js is give list of ingredients from user database. <br/>
 
